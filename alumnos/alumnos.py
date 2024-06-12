@@ -88,3 +88,63 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+"""  import os
+os.system("cls")
+
+curso = []
+
+while True:
+
+  nombre = input("ingrese el nombre del alumno o 'salir': ").lower().strip()
+
+  if nombre == "salir":
+    break
+
+  edad = input("ingrese edad del alumno: ")
+  try:
+    edad = int(edad)
+  except ValueError:
+    print("ingreso mal el dato, vuelva a intentarlo")
+    continue
+  print("coloque cada calificacion del alumno, una vez termino de colocar las calificaciones, ponga 'salir'")
+
+  calificaciones = []
+  while True:
+    nota = input("Ingrese una nota o 'salir': ").lower().strip()
+
+    if nota == "salir":
+      break
+    try:
+      nota = float(nota)
+    except:
+      print("pusiste mal salir, o se te paso una letra")
+      continue
+
+    if nota < 1 or nota > 7:
+      print("Numero fuera del rango")
+      continue
+
+    calificaciones.append(nota)
+
+  try:
+      promedio = sum(calificaciones) / len(calificaciones)
+
+  except:
+    print("Usted no agrego ningun valor")
+
+  alumno = {
+    "nombre": nombre,
+    "edad": edad,
+    "notas": calificaciones,
+    "promedio": promedio
+    }
+  curso.append(alumno)
+
+for alumno in curso:
+    print("Nombre:", alumno["nombre"])
+    print("Edad:", alumno["edad"])
+    print("Calificaciones:", alumno["notas"])
+    print("Promedio:", alumno["promedio"])
+    print("\n") """
