@@ -34,6 +34,4 @@ def main():
     menu()
 
 if __name__ == "__main__":
-    main()
-
-# esto es un comentario
+    print(dir(veterinaria))
