@@ -4,7 +4,7 @@ import os
 # Importar modulos
 from vet.veterinaria import *
 from promedio.promedio import *
-
+from alumnos.alumnos import *
 def menu():
     os.system(f"cls" if os.name == "nt" else "clear")
     print("--- Menu ---\n")
