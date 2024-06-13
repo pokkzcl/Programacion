@@ -6,6 +6,7 @@
 
 import pickle
 import os
+import platform
 
 alumnos = []
 
@@ -43,13 +44,13 @@ def mostar_alumnos():
     promedioAlumnos = 0
     totalAlumnos = len(alumnos)
 
-    os.system(f"cls" if os.system == "nt" else "clear")
+    os.system(f"cls" if platform.system() == "Windows" else "clear") # se cambio por platform.system() == 'Windows'
 
     for alumno in alumnos:
         p = alumno['Promedio']
-        promedioAlumnos += p
+        promedioAlumnos += int(p) # se modifico p a int(p)
         print(f"Nombre: {alumno['Nombre']}")
-        print(f"Curso: {alumno['Nombre']}")
+        print(f"Curso: {alumno['Curso']}")
         print(f"Promedio: {alumno['Promedio']}")
         
         
@@ -63,7 +64,7 @@ def mostar_curso():
 
 def main():
     leer_archivo()
-    os.system(f"cls" if os.system == 'nt' else 'clear')
+    os.system(f"cls" if platform.system() == 'Windows' else 'clear') # se cambio por platform.system() == 'Windows'
 
     opciones = [". Ingresar alumno", ". Mostrar alumnos", ". Mostrar alumnos por curso", ". Volver al menu"]
     
@@ -89,62 +90,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-
-"""  import os
-os.system("cls")
-
-curso = []
-
-while True:
-
-  nombre = input("ingrese el nombre del alumno o 'salir': ").lower().strip()
-
-  if nombre == "salir":
-    break
-
-  edad = input("ingrese edad del alumno: ")
-  try:
-    edad = int(edad)
-  except ValueError:
-    print("ingreso mal el dato, vuelva a intentarlo")
-    continue
-  print("coloque cada calificacion del alumno, una vez termino de colocar las calificaciones, ponga 'salir'")
-
-  calificaciones = []
-  while True:
-    nota = input("Ingrese una nota o 'salir': ").lower().strip()
-
-    if nota == "salir":
-      break
-    try:
-      nota = float(nota)
-    except:
-      print("pusiste mal salir, o se te paso una letra")
-      continue
-
-    if nota < 1 or nota > 7:
-      print("Numero fuera del rango")
-      continue
-
-    calificaciones.append(nota)
-
-  try:
-      promedio = sum(calificaciones) / len(calificaciones)
-
-  except:
-    print("Usted no agrego ningun valor")
-
-  alumno = {
-    "nombre": nombre,
-    "edad": edad,
-    "notas": calificaciones,
-    "promedio": promedio
-    }
-  curso.append(alumno)
-
-for alumno in curso:
-    print("Nombre:", alumno["nombre"])
-    print("Edad:", alumno["edad"])
-    print("Calificaciones:", alumno["notas"])
-    print("Promedio:", alumno["promedio"])
-    print("\n") """
+#hola
