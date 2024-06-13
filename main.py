@@ -34,4 +34,4 @@ def main():
     menu()
 
 if __name__ == "__main__":
-    main()
+    print(dir(veterinaria))
